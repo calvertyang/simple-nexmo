@@ -1,0 +1,33 @@
+{
+  "name": "simple-nexmo",
+  "author": "Calvert Yang <calvert@apputu.com>",
+  "version": "1.0.0",
+  "description": "A nodejs wrapper for nexmo API to send SMS",
+  "contributors": [
+    "Calvert Yang <calvert@apputu.com>"
+  ],
+  "keywords": [
+    "sms",
+    "nexmo"
+  ],
+  "main": "lib/nexmo",
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage" : "https://github.com/CalvertYang/simple-nexmo",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CalvertYang/simple-nexmo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CalvertYang/simple-nexmo/issues"
+  },
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://calvert.mit-license.org"
+    }
+  ]
+}
