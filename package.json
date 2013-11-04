@@ -1,7 +1,7 @@
 {
   "name": "simple-nexmo",
   "author": "Calvert Yang <calvert@apputu.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A nodejs wrapper for nexmo API to send SMS",
   "contributors": [
     "Calvert Yang <calvert@apputu.com>"
