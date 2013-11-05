@@ -1,6 +1,6 @@
 ## A nodejs wrapper for nexmo API to send SMS [![NPM version](https://badge.fury.io/js/simple-nexmo.png)](http://badge.fury.io/js/simple-nexmo)
 
-[![NPM status](https://nodei.co/npm/simple-nexmo.png)](https://npmjs.org/package/simple-nexmo)
+[![NPM status](https://nodei.co/npm/simple-nexmo.png?downloads=true&stars=true)](https://npmjs.org/package/simple-nexmo)
 
 ## Installation
 
@@ -15,17 +15,18 @@ $ npm install simple-nexmo
 After you've installed, you can require the package in your node application using `require`:
 
 ```js
-var nexmo = require('simple-nexmo');
+var Nexmo = require('simple-nexmo');
+var nexmo = new Nexmo();
 ```
 
 `API_KEY`、`API_SECRET`: **Required.** You will find them in "API Settings" in [Nexmo Dashboard](https://dashboard.nexmo.com/private/dashboard)
 
 `API_PROTOCOL`: **Optional.** http or https
 
-`DEBUG_MODE` : **Optional.** Set to true to see more informations
+`DEBUG_MODE` : **Optional.** Set to true to see debug informations
 
 ```js
-nexmo.initialize(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
+nexmo.init(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
 ```
 
 ## Supported API
@@ -49,6 +50,14 @@ nexmo.initialize(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
  * nexmo.[searchMessageByIds](#searchMessageByIds)(`messageIds`, `callback`)
  * nexmo.[searchMessagesByRecipient](#searchMessagesByRecipient)(`date`, `to`, `callback`)
  * nexmo.[searchRejections](#searchRejections)(`date`, `to`, `callback`)
+
+## Unsupported API
+
+The following API will supported in the future.
+
+#### Developer API
+ * nexmo.getTopUp(`transactionId`, `callback`)
+ * nexmo.updateNumberCallback(`countryCode`, `msisdn`, `newUrl`, `sysType`, `callback`)
 
 ---------------
 
