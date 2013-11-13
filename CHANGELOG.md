@@ -1,5 +1,9 @@
 ## Changelog
 
+#### 1.0.3
+_2013-11-13_
+ * Implement nexmo.getTopUp
+
 #### 1.0.2
 _2013-11-05_
  * Architecture Changes

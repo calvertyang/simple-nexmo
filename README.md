@@ -42,6 +42,7 @@ nexmo.init(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
  * nexmo.[updateSecret](#updateSecret)(`newSecret`, `callback`)
  * nexmo.[updateMoCallBackUrl](#updateMoCallBackUrl)(`newUrl`, `callback`)
  * nexmo.[updateDrCallBackUrl](#updateDrCallBackUrl)(`newUrl`, `callback`)
+ * nexmo.[getTopUp](#getTopUp)(`transactionId`, `callback`)
  * nexmo.[getNumbers](#getNumbers)(`callback`)
  * nexmo.[searchNumbers](#searchNumbers)(`countryCode`, `pattern`, `index`, `size`, `callback`)
  * nexmo.[buyNumber](#buyNumber)(`countryCode`, `msisdn`, `callback`)
@@ -56,7 +57,6 @@ nexmo.init(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
 The following API will supported in the future.
 
 #### Developer API
- * nexmo.getTopUp(`transactionId`, `callback`)
  * nexmo.updateNumberCallback(`countryCode`, `msisdn`, `newUrl`, `sysType`, `callback`)
 
 ---------------
@@ -147,6 +147,15 @@ nexmo.updateMoCallBackUrl(newUrl, callback)
 
 ```js
 nexmo.updateDrCallBackUrl(newUrl, callback)
+```
+
+<a name="getTopUp"></a>
+#### Account: Top Up - Top-up your account, only if you have turn-on the 'auto-reload' feature. The top-up amount is the one associated with your 'auto-reload' transaction.
+
+> `transactionId`: **Required**. The transaction id associated with your **first** 'auto reload' top-up. Ex: 00X123456Y7890123Z
+
+```js
+nexmo.getTopUp(transactionId, callback)
 ```
 
 <a name="getNumbers"></a>
