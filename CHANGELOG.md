@@ -1,5 +1,9 @@
 ## Changelog
 
+#### 1.0.4
+_2013-12-17_
+ * Rewrite JavaScript to CoffeeScript
+
 #### 1.0.3
 _2013-11-13_
  * Implement nexmo.getTopUp
