@@ -1,4 +1,4 @@
-## A nodejs wrapper for nexmo API to send SMS [![NPM version](https://badge.fury.io/js/simple-nexmo.png)](http://badge.fury.io/js/simple-nexmo)
+## A nodejs wrapper for nexmo API to send SMS [![NPM version](https://badge.fury.io/js/simple-nexmo.svg)](http://badge.fury.io/js/simple-nexmo)
 
 [![NPM status](https://nodei.co/npm/simple-nexmo.png?downloads=true&stars=true)](https://npmjs.org/package/simple-nexmo)
 

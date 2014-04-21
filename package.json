@@ -1,10 +1,10 @@
 {
   "name": "simple-nexmo",
-  "author": "Calvert Yang <calvert@apputu.com>",
-  "version": "1.0.4",
+  "author": "Calvert Yang <calvert@wavinfo.com>",
+  "version": "1.0.5",
   "description": "A nodejs wrapper for nexmo API to send SMS",
   "contributors": [
-    "Calvert Yang <calvert@apputu.com>"
+    "Calvert Yang <calvert@wavinfo.com>"
   ],
   "keywords": [
     "sms",

@@ -1,4 +1,7 @@
 ## Changelog
+#### 1.0.5
+_2014-04-21_
+ * Changed back to JavaScript for easy maintenance
 
 #### 1.0.4
 _2013-12-17_
