@@ -1,4 +1,9 @@
 ## Changelog
+#### 1.0.6
+_2014-05-05_
+ * Change default protocol to https
+ * Add `Content-Length` header
+
 #### 1.0.5
 _2014-04-21_
  * Changed back to JavaScript for easy maintenance
