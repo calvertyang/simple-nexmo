@@ -1,4 +1,8 @@
 ## Changelog
+#### 1.0.7
+_2014-11-05_
+ * Add TTS message support
+
 #### 1.0.6
 _2014-05-05_
  * Change default protocol to https

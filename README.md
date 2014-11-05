@@ -31,11 +31,14 @@ nexmo.init(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
 
 ## Supported API
 
-#### Messaging SMS API
+#### SMS API
  * nexmo.[sendTextMessage](#sendTextMessage)(`from`, `to`, `message`, `callback`)
  * nexmo.[sendBinaryMessage](#sendBinaryMessage)(`from`, `to`, `body`, `udh`, `callback`)
  * nexmo.[sendWapPushMessage](#sendWapPushMessage)(`from`, `to`, `title`, `url`, `validity`, `callback`)
- 
+
+#### Voice API
+ * nexmo.[sendTTSMessage](#sendTTSMessage) (`to`, `message`, `language`, `callback`)
+
 #### Developer API
  * nexmo.[getBalance](#getBalance)(`callback`)
  * nexmo.[getPricing](#getPricing)(`countryCode` ,`callback`)
@@ -54,19 +57,16 @@ nexmo.init(API_KEY, API_SECRET, API_PROTOCOL, DEBUG_MODE);
 
 ## Unsupported API
 
-The following API will supported in the future.
-
-#### Developer API
- * nexmo.updateNumberCallback(`countryCode`, `msisdn`, `newUrl`, `sysType`, `callback`)
+All other API not listed above is unsupported.
 
 ---------------
 
 <a name="sendTextMessage"></a>
-#### Messaging SMS - Send a Plain text message
+#### SMS - Send a plain text message
 
 > `from`: **Required.** Sender address may be alphanumeric. Ex: `MyCompany20`
 > 
-> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678`
+> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
 > 
 > `message`: **Required.** Text message. Ex: `Hello World!`
 
@@ -75,11 +75,11 @@ nexmo.sendTextMessage(from, to, message, callback)
 ```
 
 <a name="sendBinaryMessage"></a>
-#### Messaging SMS - Send a Binary data message
+#### SMS - Send a binary data message
 
 > `from`: **Required.** Sender address may be alphanumeric. Ex: `MyCompany20`
 > 
-> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678`
+> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
 > 
 > `body`: **Required.** Hex encoded binary data. Ex: `0011223344556677`
 > 
@@ -90,11 +90,11 @@ nexmo.sendBinaryMessage(from, to, body, udh, callback)
 ```
 
 <a name="sendWapPushMessage"></a>
-#### Messaging SMS - Send a WAP push message
+#### SMS - Send a WAP push message
 
 > `from`: **Required.** Sender address may be alphanumeric. Ex: `MyCompany20`
 > 
-> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678`
+> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
 > 
 > `title`: **Required.** Title of WAP Push. Ex: `MySite`
 > 
@@ -104,6 +104,19 @@ nexmo.sendBinaryMessage(from, to, body, udh, callback)
 
 ```js
 nexmo.sendWapPushMessage(from, to, title, url, validity, callback)
+```
+
+<a name="sendTTSMessage"></a>
+#### Voice - Send a text to speech message
+
+> `to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
+> 
+> `message`: **Required.** Text message. Ex: `Hello World!`
+> 
+> `language`: **Optional.** The language used to read the message, en-us "US english" is the default. Please refer [offical docuemnts](https://docs.nexmo.com/) to get supported languages and voices.
+
+```js
+nexmo.sendTTSMessage(to, message, language, callback)
 ```
 
 <a name="getBalance"></a>
@@ -116,7 +129,7 @@ nexmo.getBalance(callback)
 <a name="getPricing"></a>
 #### Account: Pricing - Retrieve our outbound pricing for a given country
 
-> `countryCode`: **Required.** A 2 letter country code. Ex: `CA`
+> `countryCode`: **Required.** A 2 letter country code. Ex: `TW`
 
 ```js
 nexmo.getPricing(countryCode ,callback)
@@ -168,9 +181,9 @@ nexmo.getNumbers(callback)
 <a name="searchNumbers"></a>
 #### Number: Search - Get available inbound numbers for a given country
 
-> `countryCode`: **Required.** Country code. Ex: `CA`
+> `countryCode`: **Required.** Country code. Ex: `TW`
 > 
-> `pattern`: **Optional.** A matching pattern. Ex: `888`
+> `pattern`: **Optional.** A matching pattern. Ex: `886`
 > 
 > `index`: **Optional.** Page index (>0, default 1). Ex: `2`
 > 
@@ -183,9 +196,9 @@ nexmo.searchNumbers(countryCode, pattern, index, size, callback)
 <a name="buyNumber"></a>
 #### Number: Buy - Purchase a given inbound number
 
-> `countryCode`: **Required.** Country code. Ex: ES
+> `countryCode`: **Required.** Country code. Ex: `TW`
 > 
-> `msisdn`: **Required.** An available inbound number Ex: `34911067000`
+> `msisdn`: **Required.** An available inbound number Ex: `886277417424`
 
 ```js
 nexmo.buyNumber(countryCode, msisdn, callback)
@@ -194,9 +207,9 @@ nexmo.buyNumber(countryCode, msisdn, callback)
 <a name="cancelNumber"></a>
 #### Number: Cancel - Cancel a given inbound number subscription
 
-> `countryCode`: **Required.** Country code. Ex: ES
+> `countryCode`: **Required.** Country code. Ex: `TW`
 > 
-> `msisdn`: **Required.** One of your inbound numbers Ex: `34911067000`
+> `msisdn`: **Required.** One of your inbound numbers Ex: `886277417424`
 
 ```js
 nexmo.cancelNumber(countryCode, msisdn, callback)
@@ -264,7 +277,7 @@ Refer [offical docuemnts](https://docs.nexmo.com/) to get the schema for the ret
 
 ## The MIT License (MIT)
 
-> Copyright © 2013-2014 Calvert Yang
+> Copyright © 2014 Calvert Yang
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 > 
