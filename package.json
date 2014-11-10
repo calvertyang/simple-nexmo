@@ -1,19 +1,25 @@
 {
   "name": "simple-nexmo",
-  "author": "Calvert Yang <calvert@wavinfo.com>",
+  "author": "Calvert Yang",
   "version": "1.0.7",
   "description": "A nodejs wrapper for nexmo API to send SMS",
   "contributors": [
-    "Calvert Yang <calvert@wavinfo.com>"
+    "Calvert Yang"
   ],
   "keywords": [
     "sms",
+    "tts",
     "nexmo"
   ],
   "main": "lib/nexmo",
   "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "mocha": "^2.0.1",
+    "should": "^4.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "homepage": "https://github.com/CalvertYang/simple-nexmo",
   "repository": {

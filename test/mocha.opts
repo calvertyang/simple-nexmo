@@ -1,0 +1,4 @@
+--require should
+--reporter spec
+--recursive
+--timeout 5000

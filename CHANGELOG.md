@@ -1,4 +1,9 @@
 ## Changelog
+#### 2.0.0
+_2014-11-10_
+ * Support more parameter for each APIs
+ * Add test
+
 #### 1.0.7
 _2014-11-05_
  * Add TTS message support

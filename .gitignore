@@ -8,4 +8,10 @@ npm-debug.log
 # tmp, editor & OS files
 ##############################
 .tmp
+*.swp
 .DS_STORE
+
+##############################
+# Tests
+##############################
+coverage
