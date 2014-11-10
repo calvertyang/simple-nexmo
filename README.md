@@ -1,7 +1,7 @@
 ## A nodejs wrapper for nexmo API to send SMS
 
-[![NPM version](https://img.shields.io/npm/v/simple-nexmo.svg?style=flat)](https://npmjs.org/package/simple-nexmo)
-[![build status](https://img.shields.io/travis/calvertyang/simple-nexmo.svg?style=flat)](https://travis-ci.org/calvertyang/simple-nexmo)
+[![NPM version](https://badge.fury.io/js/simple-nexmo.svg)](https://npmjs.org/package/simple-nexmo)
+[![Build Status](https://travis-ci.org/CalvertYang/simple-nexmo.svg)](https://travis-ci.org/calvertyang/simple-nexmo)
 
 [![NPM status](https://nodei.co/npm/simple-nexmo.png?downloads=true&stars=true)](https://npmjs.org/package/simple-nexmo)
 
