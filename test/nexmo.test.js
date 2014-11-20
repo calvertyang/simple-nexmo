@@ -85,7 +85,7 @@ describe('SMS', function() {
         to: to,
         type: 'wappush',
         title: 'My site',
-        url: 'http%3a%2f%2fwww.mysite.com'
+        url: 'http://www.mysite.com'
       };
 
       nexmo.sendSMSMessage(opts, function(err, res) {

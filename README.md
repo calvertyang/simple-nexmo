@@ -1,4 +1,4 @@
-## A nodejs wrapper for nexmo API to send SMS
+## A nodejs wrapper for nexmo API
 
 [![NPM version](https://badge.fury.io/js/simple-nexmo.svg)](https://npmjs.org/package/simple-nexmo)
 [![Build Status](https://travis-ci.org/CalvertYang/simple-nexmo.svg)](https://travis-ci.org/calvertyang/simple-nexmo)
@@ -103,7 +103,7 @@ nexmo.sendSMSMessage(options, callback)
 >
 > options.`title`: **Required** when type='wappush'. Title of WAP Push. Ex: title=MySite
 >
-> options.`url`: **Required** when type='wappush'. WAP Push URL. Ex: url=http%3a%2f%2fwww.mysite.com
+> options.`url`: **Required** when type='wappush'. WAP Push URL. Ex: url=http://www.mysite.com
 >
 > options.`validity`: **Optional** when type='wappush'. Set how long WAP Push is available in milliseconds. Ex: validity=86400000 (Default: 48 hours)
 

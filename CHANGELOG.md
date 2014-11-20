@@ -1,4 +1,8 @@
 ## Changelog
+#### 2.0.1
+_2014-11-20_
+ * Encode WAP push url
+
 #### 2.0.0
 _2014-11-10_
  * Support more parameter for each APIs
