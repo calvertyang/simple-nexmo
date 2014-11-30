@@ -1,7 +1,7 @@
 {
   "name": "simple-nexmo",
   "author": "Calvert Yang",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A nodejs wrapper for nexmo API",
   "contributors": [
     "Calvert Yang"
