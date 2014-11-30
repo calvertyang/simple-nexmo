@@ -1,5 +1,9 @@
 ## Changelog
 #### 2.0.1
+_2014-11-30_
+ * Fix text message encoded issue
+
+#### 2.0.1
 _2014-11-20_
  * Encode WAP push url
 

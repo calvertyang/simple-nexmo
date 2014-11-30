@@ -81,7 +81,7 @@ nexmo.sendSMSMessage(options, callback)
 >
 > options.`type`: **Required.** This can be Text message(text), Binary(binary), WAP Push(wappush), Unicode message(unicode), vcal(vcal) or vcard(vcard).
 >
-> options.`text`: **Required** when type='text' or type='unicode'. Body of the text message.
+> options.`text`: **Required** when type='text' or type='unicode'. Body of the text message. UTF-8 and URL encoded value.
 >
 > options.`status-report-req`: **Optional.** Set to 1 if you want to receive a delivery report (DLR) for this request. Make sure to configure your "Callback URL" in your "API Settings"
 >

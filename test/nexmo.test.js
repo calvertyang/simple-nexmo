@@ -1,8 +1,8 @@
 'use strict';
 
 var Nexmo = require('../lib/nexmo');
-var api_key = 'SD_32065';
-var api_secret = 'PS_95392';
+var api_key = 'SD_7894';
+var api_secret = 'PS_19371';
 
 var nexmo = new Nexmo({
   apiKey: api_key,
