@@ -193,7 +193,7 @@ nexmo.getNumbers(options, callback)
 nexmo.searchNumbers(options, callback)
 ```
 
-> options.`countryCode`: **Required.** Country code. Ex: `TW`
+> options.`country`: **Required.** Country code. Ex: `TW`
 >
 > options.`pattern`: **Optional.** A matching pattern. Ex: `886`
 >
