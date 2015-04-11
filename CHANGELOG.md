@@ -1,5 +1,10 @@
 ## Changelog
-#### 2.0.1
+#### 2.1.0
+_2015-04-11_
+ * Change `countryCode` to `country`
+ * Update README
+
+#### 2.0.2
 _2014-11-30_
  * Fix text message encoded issue
 

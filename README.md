@@ -49,7 +49,7 @@ var nexmo = new Nexmo({
 
 #### Developer API
  * nexmo.[getBalance](#getBalance)(`callback`)
- * nexmo.[getPricing](#getPricing)(`countryCode` ,`callback`)
+ * nexmo.[getPricing](#getPricing)(`country` ,`callback`)
  * nexmo.[updateSettings](#updateSecret)(`options`, `callback`)
  * nexmo.[getTopUp](#getTopUp)(`transactionId`, `callback`)
  * nexmo.[getNumbers](#getNumbers)(`options`, `callback`)
@@ -145,10 +145,10 @@ nexmo.getBalance(callback)
 #### Account: Pricing - Retrieve our outbound pricing for a given country
 
 ```js
-nexmo.getPricing(countryCode ,callback)
+nexmo.getPricing(country ,callback)
 ```
 
-> `countryCode`: **Required.** A 2 letter country code. Ex: `TW`
+> `country`: **Required.** A 2 letter country code. Ex: `TW`
 
 <a name="updateSettings"></a>
 #### Account: Settings - Update API secret
@@ -210,7 +210,7 @@ nexmo.searchNumbers(options, callback)
 nexmo.buyNumber(options, callback)
 ```
 
-> options.`countryCode`: **Required.** Country code. Ex: `TW`
+> options.`country`: **Required.** Country code. Ex: `TW`
 >
 > options.`msisdn`: **Required.** An available inbound number Ex: `886277417424`
 
@@ -221,7 +221,7 @@ nexmo.buyNumber(options, callback)
 nexmo.cancelNumber(options, callback)
 ```
 
-> options.`countryCode`: **Required.** Country code. Ex: `TW`
+> options.`country`: **Required.** Country code. Ex: `TW`
 >
 > options.`msisdn`: **Required.** One of your inbound numbers Ex: `886277417424`
 
@@ -232,7 +232,7 @@ nexmo.cancelNumber(options, callback)
 nexmo.updateNumber(options, callback)
 ```
 
-> options.`countryCode`: **Required.** Country code. Ex: `TW`
+> options.`country`: **Required.** Country code. Ex: `TW`
 >
 > options.`msisdn`: **Required.** One of your inbound numbers Ex: `886277417424`
 >
@@ -308,7 +308,7 @@ Refer [offical docuemnts](https://docs.nexmo.com/) to get the schema for the ret
 
 ## The MIT License (MIT)
 
-> Copyright © 2014 Calvert Yang
+> Copyright © 2015 Calvert Yang
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 >
