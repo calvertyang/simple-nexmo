@@ -33,7 +33,7 @@ var nexmo = new Nexmo({
 
 `apiKey`、`apiSecret`: **Required.** You can find them in "API Settings" in [Nexmo Dashboard](https://dashboard.nexmo.com/private/dashboard)
 
-`baseUrl`: **Optional.** Set to rest-sandbox.nexmo.com to test in sandbox (Default: rest.nexmo.com)
+`baseUrl`: **Optional.** Set to rest-sandbox.nexmo.com to test in sandbox (Default: rest.nexmo.com, except TTS message)
 
 `useSSL`: **Optional.** Set to true to use HTTP protocol instead HTTPS (Default: true)
 

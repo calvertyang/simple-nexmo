@@ -1,4 +1,9 @@
 ## Changelog
+#### 2.1.1
+_2015-05-03_
+ * Update endpoint for TTS message
+ * Update README
+
 #### 2.1.0
 _2015-04-11_
  * Change `countryCode` to `country`
