@@ -1,4 +1,13 @@
 ## Changelog
+#### 2.1.3
+_2015-11-01_
+* Fix typo [#5](https://github.com/CalvertYang/simple-nexmo/pull/5)
+* Update README [#6](https://github.com/CalvertYang/simple-nexmo/pull/6)
+
+#### 2.1.2
+_2015-06-08_
+ * Fix typo [#4](https://github.com/CalvertYang/simple-nexmo/pull/4)
+
 #### 2.1.1
 _2015-05-03_
  * Update endpoint for TTS message
@@ -6,7 +15,7 @@ _2015-05-03_
 
 #### 2.1.0
 _2015-04-11_
- * Change `countryCode` to `country`
+ * Fix typo [#2](https://github.com/CalvertYang/simple-nexmo/pull/2)
  * Update README
 
 #### 2.0.2
