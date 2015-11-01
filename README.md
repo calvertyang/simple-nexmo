@@ -106,6 +106,8 @@ nexmo.sendSMSMessage(options, callback)
 > options.`url`: **Required** when type='wappush'. WAP Push URL. Ex: url=http://www.mysite.com
 >
 > options.`validity`: **Optional** when type='wappush'. Set how long WAP Push is available in milliseconds. Ex: validity=86400000 (Default: 48 hours)
+>
+> options.`callback` : **Optional** The Callback URL the delivery receipt for this call is sent to. This parameter overrides the Callback URL you set in Nexmo Dashboard.
 
 <a name="sendTTSMessage"></a>
 #### Voice - Send a text to speech message
