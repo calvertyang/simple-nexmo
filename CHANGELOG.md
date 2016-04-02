@@ -1,4 +1,9 @@
 ## Changelog
+#### 2.2.0
+_2016-04-02_
+* Fix api response error check
+* Call api supported
+
 #### 2.1.3
 _2015-11-01_
 * Fix typo [#5](https://github.com/CalvertYang/simple-nexmo/pull/5)

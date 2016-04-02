@@ -1,7 +1,7 @@
 ## A nodejs wrapper for nexmo API
 
 [![NPM version](https://badge.fury.io/js/simple-nexmo.svg)](https://npmjs.org/package/simple-nexmo)
-[![Build Status](https://travis-ci.org/CalvertYang/simple-nexmo.svg)](https://travis-ci.org/calvertyang/simple-nexmo)
+<!--[![Build Status](https://travis-ci.org/CalvertYang/simple-nexmo.svg)](https://travis-ci.org/calvertyang/simple-nexmo)-->
 
 [![NPM status](https://nodei.co/npm/simple-nexmo.png?downloads=true&stars=true)](https://npmjs.org/package/simple-nexmo)
 
@@ -45,6 +45,7 @@ var nexmo = new Nexmo({
  * nexmo.[sendSMSMessage](#sendSMSMessage)(`options`, `callback`)
 
 #### Voice API
+ * nexmo.[generateCall](#generateCall)(`options`, `callback`)
  * nexmo.[sendTTSMessage](#sendTTSMessage)(`options`, `callback`)
 
 #### Developer API
@@ -75,39 +76,66 @@ All other API not listed above is unsupported.
 nexmo.sendSMSMessage(options, callback)
 ```
 
-> options.`from`: **Required.** Sender address may be alphanumeric. Ex: `MyCompany20`
+> options.`from`: **Required.** An alphanumeric string giving your sender address. Ex: `MyCompany20`
 >
-> options.`to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
+> options.`to`: **Required.** A single phone number in international format, that is [E.164](https://en.wikipedia.org/wiki/E.164). Ex: `886912345678`
 >
-> options.`type`: **Required.** This can be Text message(text), Binary(binary), WAP Push(wappush), Unicode message(unicode), vcal(vcal) or vcard(vcard).
+> options.`type`: **Required.** Default value is text. Possible values are `text`(plain text SMS), `binary`(binary SMS), `wappush`(WAP Push), `unicode`(plain text SMS in [unicode](https://en.wikipedia.org/wiki/unicode)), `vcal`(calendar event), `vcard`(business card)
 >
 > options.`text`: **Required** when type='text' or type='unicode'. Body of the text message. UTF-8 and URL encoded value.
 >
-> options.`status-report-req`: **Optional.** Set to 1 if you want to receive a delivery report (DLR) for this request. Make sure to configure your "Callback URL" in your "API Settings"
+> options.`status-report-req`: **Optional.** Set to 1 to receive a Delivery Receipt (DLR). Make sure to configure your "Callback URL" in your "API Settings"
 >
-> options.`client-ref`: **Optional.** Include any reference string for your reference. Useful for your internal reports (40 characters max).
+> options.`client-ref`: **Optional.** A 40 character reference string for your internal reporting.
 >
-> options.`network-code`: **Optional.** Force the recipient network operator MCCMNC, make sure to supply the correct information otherwise the message won't be delivered.
+> options.`vcard`: **Optional.** A business card in [vCard](https://en.wikipedia.org/wiki/VCard). You must set the type parameter to vcard.
 >
-> options.`vcard`: **Optional.** vcard text body correctly formatted.
+> options.`vcal`: **Optional.** A calendar event in [vCal](https://en.wikipedia.org/wiki/VCal). You must set the type parameter to vcal.
 >
-> options.`vcal`: **Optional.** vcal text body correctly formatted.
->
-> options.`ttl`: **Optional.** Message life span in milliseconds.
->
-> options.`message-class`: **Optional.** Set to 0 for [Flash SMS](http://en.wikipedia.org/wiki/Short_Message_Service#Flash_SMS).
->
-> options.`body`: **Required** when type='binary'. Hex encoded binary data. Ex: body=0011223344556677
->
-> options.`udh`: **Required** when type='binary'. Hex encoded udh. Ex: udh=06050415811581
->
-> options.`title`: **Required** when type='wappush'. Title of WAP Push. Ex: title=MySite
->
-> options.`url`: **Required** when type='wappush'. WAP Push URL. Ex: url=http://www.mysite.com
->
-> options.`validity`: **Optional** when type='wappush'. Set how long WAP Push is available in milliseconds. Ex: validity=86400000 (Default: 48 hours)
+> options.`ttl`: **Optional.** The lifespan of this SMS in milliseconds.
 >
 > options.`callback` : **Optional** The Callback URL the delivery receipt for this call is sent to. This parameter overrides the Callback URL you set in Nexmo Dashboard.
+>
+> options.`message-class`: **Optional.** Set to 0 for [Flash SMS](https://en.wikipedia.org/wiki/Short_Message_Service#Flash_SMS). Possible values are from 0 to 3 inclusive.
+>
+> options.`udh`: **Required** when type='binary'. Your custom Hex encoded [User Data Header (UDH)](https://en.wikipedia.org/wiki/User_Data_Header). Ex: `06050415811581`
+>
+> options.`protocol-id`: **Required** when type='binary'. The value in decimal format for the [higher level protocol](https://en.wikipedia.org/wiki/GSM_03.40#Protocol_Identifier) to use for this SMS.
+>
+> options.`body`: **Required** when type='binary'. Hex encoded binary data. Ex: `0011223344556677`
+>
+> options.`title`: **Required** when type='wappush'. The title for a wappush SMS. Ex: `MySite`
+>
+> options.`url`: **Required** when type='wappush'. The URL your user taps to navigate to your website. Ex: `http://www.mysite.com`
+>
+> options.`validity`: **Optional** when type='wappush'. The availibility period for a wappush type SMS in milliseconds. (Default: 48 hours) Ex: `86400000`
+
+<a name="generateCall"></a>
+#### Voice - Generate voice calls over regular phone numbers
+
+```js
+nexmo.generateCall(options, callback)
+```
+
+> options.`to`: **Required.** A single phone number in international format, that is [E.164](https://en.wikipedia.org/wiki/E.164). Ex: `886912345678`
+>
+> options.`answer_url`: **Required** A URL pointing to the VoiceXML file on your HTTP server that controls your Call.
+>
+> options.`from`: **Optional.** A voice-enabled virtual number associated with your Nexmo account.
+>
+> options.`machine_detection`: **Optional.** How to behave when an answering machine is detected.
+>
+> options.`machine_timeout`: **Optional.** The time in milliseconds used to distinguish between human and machine events.
+>
+> options.`answer_method`: **Optional.** The HTTP method used to send a response to your answer_url.
+>
+> options.`error_url`: **Optional.** Send the VoiceXML error message to this URL if there's a problem requesting or executing the VoiceXML referenced in the answer_url
+>
+> options.`error_method`: **Optional.** The HTTP method used to send an error message to your error_url.
+>
+> options.`status_url`: **Optional.** Nexmo sends the Call Return Parameters to this Callback URL in order to notify your App that the Call has ended.
+>
+> options.`status_method`: **Optional.** The HTTP method used to send the status message to your status_url. Must be GET (default) or POST.
 
 <a name="sendTTSMessage"></a>
 #### Voice - Send a text to speech message
@@ -116,25 +144,25 @@ nexmo.sendSMSMessage(options, callback)
 nexmo.sendTTSMessage(options, callback)
 ```
 
-> options.`to`: **Required.** Mobile number in international format, and one recipient per request. Ex: `886912345678` when sending to Taiwan
+> options.`to`: **Required.** The single phone number to call for each request. This number must be in international format, that is [E.164](https://en.wikipedia.org/wiki/E.164). Ex: `886912345678`
 >
-> options.`from`: **Optional.** A voice enabled inbound number associated with your account.
+> options.`from`: **Optional.** A voice-enabled virtual number associated with your Nexmo account.
 >
-> options.`text`: **Required.** Body of the text message (with a maximum length of 1000 characters), UTF-8 and URL encoded value.
+> options.`text`: **Required.** A UTF-8 and URL encoded message that is sent to your user. This message can be up to 1500 characters).
 >
-> `lg`: **Optional.** The language used to read the message, en-us "US english" is the default. Please refer [offical docuemnts](https://docs.nexmo.com/) to get supported languages and voices.
+> `lg`: **Optional.** The [language](https://docs.nexmo.com/api-ref/voice-api/supported-languages) used to synthesize the message. (Default: en-us)
 >
-> options.`voice`: **Optional.** The voice to be used female (default) or male
+> options.`voice`: **Optional.** The gender of the voice used for the TTS. (Default: female)
 >
-> options.`repeat`: **Optional.** Define how many times you want to repeat the text message (default is 1 , maximum is 10).
+> options.`repeat`: **Optional.** Define how many times you want to repeat the text message. (Default: 1, Maximum: 10)
 >
 > options.`machine_detection`: **Optional.** How to behave when an answering machine is detected.
 >
-> options.`machine_timeout`: **Optional.** Time allocated to analyze if the call has been answered by a machine. (Default: 15000 ms).
+> options.`machine_timeout`: **Optional.** The time to check if this TTS has been answered by a machine.
 >
-> options.`callback`: **Optional.** A URL to which Nexmo will send a request when the call ends to notify your application.
+> options.`callback`: **Optional.** Nexmo sends the Text-To-Speech Return Parameters to this URL to tell your App how the call was executed.
 >
-> options.`callback_method`: **Optional.** The HTTP method for your callback. Must be GET (default) or POST.
+> options.`callback_method`: **Optional.** The HTTP method used to send the status message to your callback. Must be GET (default) or POST.
 
 <a name="getBalance"></a>
 #### Account: Get Balance - Retrieve current account balance
@@ -159,7 +187,7 @@ nexmo.getPricing(country ,callback)
 nexmo.updateSettings(options, callback)
 ```
 
-> options.`newSecret`: **Optional.** New API secret (8 characters max)
+> options.`newSecret`: **Optional.** Your new API secret.
 >
 > options.`moCallBackUrl`: **Optional.** Inbound call back URL. The URL should be active to be taken into account.
 >
@@ -172,7 +200,7 @@ nexmo.updateSettings(options, callback)
 nexmo.getTopUp(transactionId, callback)
 ```
 
-> `transactionId`: **Required**. The transaction id associated with your **first** 'auto reload' top-up. Ex: 00X123456Y7890123Z
+> `transactionId`: **Required**. The id associated with your **original** 'auto reload' transaction Payment & Billing. Ex: `00X123456Y7890123Z`
 
 <a name="getNumbers"></a>
 #### Account: Numbers - Get all inbound numbers associated with Nexmo account
@@ -181,11 +209,13 @@ nexmo.getTopUp(transactionId, callback)
 nexmo.getNumbers(options, callback)
 ```
 
-> options.`index`: **Optional.** Page index (>0, default 1). Ex: 2
+> options.`index`: **Optional.** Page index (>0, default 1). Ex: `2`
 >
-> options.`size`: **Optional.** Page size (max 100, default 10). Ex: 25
+> options.`size`: **Optional.** Page size (max 100, default 10). Ex: `25`
 >
-> options.`pattern`: **Optional.** A matching pattern. Ex: 33
+> options.`pattern`: **Optional.** A matching pattern. Ex: `33`
+>
+> options.`search_pattern`: **Optional.** Strategy for matching pattern.
 >
 
 <a name="searchNumbers"></a>
@@ -199,7 +229,9 @@ nexmo.searchNumbers(options, callback)
 >
 > options.`pattern`: **Optional.** A matching pattern. Ex: `886`
 >
-> options.`features`: **Optional.** Available features are SMS and VOICE, use a comma-separated values. Ex: SMS,VOICE
+> options.`search_pattern`: **Optional.** Strategy for matching pattern.
+>
+> options.`features`: **Optional.** Available features are SMS and VOICE, use a comma-separated values. Ex: `SMS`, `VOICE`
 >
 > options.`index`: **Optional.** Page index (>0, default 1). Ex: `2`
 >
@@ -240,7 +272,7 @@ nexmo.updateNumber(options, callback)
 >
 > options.`moHttpUrl`: **Optional.** The URL should be active to be taken into account.
 >
-> options.`moSmppSysType`: **Optional.** The associated system type for SMPP client only Ex: inbound
+> options.`moSmppSysType`: **Optional.** The associated system type for SMPP client only Ex: `inbound`
 >
 > options.`voiceCallbackType`: **Optional.** The voice callback type for SIP end point (sip), for a telephone number (tel), for VoiceXML end point (vxml)
 >
