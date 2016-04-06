@@ -1,13 +1,17 @@
 ## Changelog
+#### 2.2.1
+_2016-04-06_
+ * Fix useSSL option cannot be set to false [#9](https://github.com/CalvertYang/simple-nexmo/pull/9)
+
 #### 2.2.0
 _2016-04-02_
-* Fix api response error check
-* Call api supported
+ * Call api supported [#7](https://github.com/CalvertYang/simple-nexmo/issues/7)
+ * Fix api response error check [#8](https://github.com/CalvertYang/simple-nexmo/issues/8)
 
 #### 2.1.3
 _2015-11-01_
-* Fix typo [#5](https://github.com/CalvertYang/simple-nexmo/pull/5)
-* Update README [#6](https://github.com/CalvertYang/simple-nexmo/pull/6)
+ * Fix typo [#5](https://github.com/CalvertYang/simple-nexmo/pull/5)
+ * Update README [#6](https://github.com/CalvertYang/simple-nexmo/pull/6)
 
 #### 2.1.2
 _2015-06-08_
@@ -15,7 +19,7 @@ _2015-06-08_
 
 #### 2.1.1
 _2015-05-03_
- * Update endpoint for TTS message
+ * Update endpoint for TTS message [#3](https://github.com/CalvertYang/simple-nexmo/issues/3)
  * Update README
 
 #### 2.1.0
@@ -25,7 +29,7 @@ _2015-04-11_
 
 #### 2.0.2
 _2014-11-30_
- * Fix text message encoded issue
+ * Fix text message encoded issue [#1](https://github.com/CalvertYang/simple-nexmo/pull/1)
 
 #### 2.0.1
 _2014-11-20_
